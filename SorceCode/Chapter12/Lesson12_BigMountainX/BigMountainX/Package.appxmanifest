@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="748f8ea9-5de1-48be-a132-323bdc3c5fcc" Publisher="CN=Me" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="748f8ea9-5de1-48be-a132-323bdc3c5fcc" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>BigMountainX</DisplayName>
+    <PublisherDisplayName>Me</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BigMountainX.App">
+      <uap:VisualElements DisplayName="BigMountainX" Square150x150Logo="Assetstile-square.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="BigMountainX" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\tile-wide.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.personalAssistantLaunch"/>
+        <uap:Extension Category="windows.appService" EntryPoint="BMX.BackgroundTasks.CortanaAppService">
+          <uap:AppService Name="bmx-cortana-service" />
+        </uap:Extension>
+        <uap:Extension Category="windows.appService" EntryPoint="BMX.BackgroundTasks.BMXAppServices">
+          <uap:AppService Name="bmx-service" />
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="bmx" />
+        </uap:Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BMX.BackgroundTasks.WallpaperSwitcherTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BMX.BackgroundTasks.AudioPlayback">
+          <BackgroundTasks>
+            <Task Type="audio" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BMX.BackgroundTasks.ContactsWatcher">
+          <BackgroundTasks>
+            <Task Type="general" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BMX.BackgroundTasks.ActionableToastServer">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="supported_files">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.txt</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.shareTarget">
+          <uap:ShareTarget Description="For the purpose of creating customers">
+            <uap:DataFormat>text</uap:DataFormat>
+          </uap:ShareTarget>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.publisherCacheFolders">
+      <PublisherCacheFolders>
+        <Folder Name="bxm_shared_state" />
+      </PublisherCacheFolders>
+    </Extension>
+  </Extensions>
+</Package>

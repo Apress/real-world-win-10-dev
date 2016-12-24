@@ -1,0 +1,159 @@
+﻿<Page x:Class="BigMountainX.ApplicationHostPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="#FF6A6A6A">
+        <Rectangle x:Name="rect_titlebar"
+                   Height="50"
+                   Fill="#FF6A6A6A"
+                   VerticalAlignment="Top" />
+        <SplitView x:Name="panel_splitter"
+                   IsPaneOpen="False"
+                   DisplayMode="CompactInline"
+                   CompactPaneLength="40"
+                   OpenPaneLength="200"
+                   Margin="0">
+            <SplitView.Pane>
+
+                <Grid Background="#AA6A6A6A">
+                    <StackPanel Orientation="Vertical"
+                                Margin="0,50,0,0"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Stretch">
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnDashboardClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="GoToStart"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Dashboard" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnManageProfileClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Contact2"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Manage Profile" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnOpenMicClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="GoToToday"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Schedule Open Mic" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnGetTicketsClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Shop"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Get Tickets" />
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,0,20">
+
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnPatronCounterClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="AddFriend"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Patron Counter" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnManageEventsClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="CalendarDay"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Manage Events" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnManageContactsClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="ContactInfo"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Manage Contacts" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnManageMailingListClicked"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="List"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="Manage Mailing List" />
+                            </StackPanel>
+                        </Button>
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Margin="0,5,0,0"
+                                Click="OnPOS"
+                                Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Calculator"
+                                            Margin="0,0,20,0" />
+                                <TextBlock Text="POS" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </SplitView.Pane>
+            <Grid>
+                <Frame x:Name="root_frame"
+                       Margin="0,50,0,0"
+                       SourcePageType="local:LandingPage" />
+            </Grid>
+        </SplitView>
+        <StackPanel Width="40"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+            <Button Height="50"
+                    Background="Transparent"
+                    Click="OnPaneOpened">
+                <SymbolIcon Symbol="OpenPane" />
+            </Button>
+            <Rectangle Stroke="Gray"
+                       StrokeThickness=".5"
+                       Margin="5,0,5,0"
+                       Height=".5"
+                       HorizontalAlignment="Stretch" />
+        </StackPanel>
+
+    </Grid>
+</Page>

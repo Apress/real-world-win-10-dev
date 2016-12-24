@@ -1,0 +1,68 @@
+﻿<Page x:Class="Lesson4_LayoutDemos.RelativePanelDemo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:Lesson4_LayoutDemos" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+			
+            <StackPanel Orientation="Vertical">
+                <Button Content="1" />
+                <Button Content="2" />
+                <Button Content="3" />
+            </StackPanel>
+           
+			
+            <StackPanel Grid.Column="1">
+                <Button Content="4" />
+                <Button Content="5" />
+                <Button Content="6" />
+            </StackPanel>
+            
+            <StackPanel Grid.Column="2">
+                <Button Content="7" HorizontalAlignment="Stretch" />
+                <Button Content="8" HorizontalAlignment="Stretch" />
+                <Button Content="9" HorizontalAlignment="Stretch" />
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <Button Content="1" />
+                <Button Content="2" />
+                <Button Content="3" />
+            </StackPanel>
+            <StackPanel>
+                <Button Content="4" />
+                <Button Content="5" />
+                <Button Content="6" />
+            </StackPanel>
+           
+        </StackPanel>
+        <RelativePanel Grid.Column="2">
+            <StackPanel x:Name="stack_left" Orientation="Vertical">
+                <Button Content="1" />
+                <Button Content="2" />
+                <Button Content="3" />
+            </StackPanel>
+            <StackPanel x:Name="stack_right" RelativePanel.RightOf="stack_left">
+                <Button Content="4" />
+                <Button Content="5" />
+                <Button Content="6" />
+            </StackPanel>
+            <StackPanel x:Name="stack_bottom" RelativePanel.RightOf="stack_right">
+                <Button Content="7" HorizontalAlignment="Stretch" />
+                <Button Content="8" HorizontalAlignment="Stretch" />
+                <Button Content="9" HorizontalAlignment="Stretch" />
+            </StackPanel>
+            
+
+        </RelativePanel>
+    </Grid>
+</Page>

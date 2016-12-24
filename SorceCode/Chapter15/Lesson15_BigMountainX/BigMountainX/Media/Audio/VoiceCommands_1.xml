@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+    <CommandSet xml:lang="en-us" Name="en-us-CommandSet">
+        <CommandPrefix>Big Mountain,</CommandPrefix>
+        <Example> Show me what's hapenning </Example>
+        <Command Name="show-events-today">
+            <Example>what's hapenning today in New York</Example>
+            <ListenFor>what's hapenning today in {location}</ListenFor>
+            <Feedback>what's hapenning today {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="show-events-tomorrow">
+            <Example>what's hapenning tomorrow in New York</Example>
+            <ListenFor>what's hapenning tomorrow in {location}</ListenFor>
+            <Feedback>what's hapenning tomorrow in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="show-events-thisweek">
+            <Example>find me upcomming shows in New York this week</Example>
+            <ListenFor>find me upcomming shows in {location} this week</ListenFor>
+            <Feedback>Finding this week's shows in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="show-events-thismonth">
+            <Example>find me this month's shows in New York</Example>
+            <ListenFor>find me this month's shows in {location}</ListenFor>
+            <Feedback>Finding shows for this month in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <PhraseList Label="location" />
+    </CommandSet>
+</VoiceCommands>

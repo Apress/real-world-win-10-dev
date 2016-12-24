@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+    <CommandSet xml:lang="en-us" Name="en-us-CommandSet">
+        <CommandPrefix>Big Mountain,</CommandPrefix>
+        <Example> Show me what's hapenning </Example>
+        <Command Name="change-desktop-wallpaper">
+            <Example>change my wallpaper</Example>
+            <ListenFor>change my wallpaper</ListenFor>
+            <Feedback>okay</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <Command Name="joke-knock-knock">
+            <Example>tell me a joke</Example>
+            <ListenFor>tell me a joke</ListenFor>
+            <Feedback>okay</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <Command Name="joke-whos-there">
+            <Example>tell me a joke</Example>
+            <ListenFor>who's there</ListenFor>
+            <Feedback>it's</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <Command Name="joke-punchline">
+            <Example>tell me a joke</Example>
+            <ListenFor>{joke_name} who</ListenFor>
+            <Feedback>okay</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <Command Name="buy-tickets">
+            <Example>Get me tickets to the next evening show in Miami</Example>
+            <ListenFor>Get me tickets to the next {event_type} in {location}</ListenFor>
+            <Feedback>Getting tickets to {event_type} in {location}</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <Command Name="make-suggestions">
+            <Example>Give me some fun suggestions in Boston</Example>
+            <ListenFor>Give me some fun suggestions in {location}</ListenFor>
+            <Feedback>here are some fun suggestions in {location}</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <Command Name="count">
+            <Example>give me the count</Example>
+            <ListenFor>give me the count</ListenFor>
+            <Feedback>okay</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <PhraseList Label="location" />
+        <PhraseList Label="joke_name" >
+            <Item>amos</Item>
+            <Item>who</Item>
+            <Item>honey bee</Item>
+            <Item>letuce</Item>
+            <Item>double</Item>
+        </PhraseList>
+        <PhraseList Label="event_type" >
+            <Item>morning show</Item>
+            <Item>afternoon show</Item>
+            <Item>evening show</Item>
+            <Item>night show</Item>
+        </PhraseList>
+    </CommandSet>
+</VoiceCommands>

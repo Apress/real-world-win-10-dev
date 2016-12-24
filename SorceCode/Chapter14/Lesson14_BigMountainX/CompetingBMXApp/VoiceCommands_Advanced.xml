@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+    <CommandSet xml:lang="en-us" Name="en-us-CommandSet"> 
+        <CommandPrefix>Big Mountain, </CommandPrefix>
+        <Example> Show me what's hapenning </Example>
+        <Command Name="show-events">
+            <Example>show me upcomming events in New York</Example>
+            <ListenFor>show me upcomming events in {location}</ListenFor>
+            <Feedback>Showing events in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="buy-tickets">
+            <Example>Get me tickets to the next comedy show in Miami</Example>
+            <ListenFor>Get me tickets to the next {event_type} in {location}</ListenFor>
+            <Feedback>Getting tickets to {event_type} in {location}</Feedback>
+            <Navigate/>
+        </Command>
+
+        <Command Name="change-desktop-wallpaper">
+            <Example>change my wallpaper</Example>
+            <ListenFor>switch my wallpaper</ListenFor>
+            <Feedback>okay</Feedback>
+            <VoiceCommandService Target="bmx-cortana-service"/>
+        </Command>
+        <PhraseList Label="location">
+            <Item>Miami</Item>
+            <Item>Boston</Item>
+            <Item>New York</Item>
+            <Item>Chicago</Item>
+        </PhraseList>
+        <PhraseList Label="event_type">
+            <Item>Comedy Show</Item>
+            <Item>Party</Item>
+            <Item>Performance</Item>
+            <Item>Open Mic</Item>
+        </PhraseList>
+    </CommandSet>
+</VoiceCommands>

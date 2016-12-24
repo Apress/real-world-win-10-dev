@@ -1,0 +1,61 @@
+﻿<Page x:Class="BigMountainX.CreateEventPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  HorizontalScrollMode="Auto">
+        <StackPanel Orientation="Vertical"
+                    Width="350"
+                    Background="#FF6A6A6A"
+                    HorizontalAlignment="Center">
+            <TextBox x:ConnectionId='1' x:Name="txt_eventtitle"
+                     Header="Event Title"
+                     Margin="10"
+                     HorizontalAlignment="Stretch" />
+            <TextBox x:ConnectionId='2' x:Name="txt_eventdescription"
+                     Header="Event Description"
+                     Margin="10" TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     Height="200"
+                     HorizontalAlignment="Stretch" />
+            <TextBox x:ConnectionId='3' x:Name="txt_address"
+                     Header="Event Address"
+                     Margin="10"
+                     HorizontalAlignment="Stretch" />
+            <CalendarDatePicker x:ConnectionId='4' x:Name="control_calendar"
+                                HorizontalAlignment="Stretch"
+                                Margin="10"
+                                Header="Event Day"
+                                VerticalAlignment="Top"
+                                PlaceholderText="What day will it be held?" />
+            <TimePicker x:ConnectionId='5' x:Name="control_time"
+                        Header="What time will it be held?"
+                        Margin="10"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top" />
+            <Slider x:ConnectionId='6' x:Name="slider_duration"
+                    Header="Event Duration"
+                    HorizontalAlignment="Stretch"
+                    Minimum="1"
+                    Maximum="24"
+                    Margin="10"
+                    VerticalAlignment="Top" />
+            <StackPanel Orientation="Horizontal">
+                <Button x:ConnectionId='7' Margin="10"
+                        Content="Save"
+                        Width="100"
+                                          />
+                <Button x:ConnectionId='8' Margin="10"
+                        Width="100"
+                        Content="Cancel"
+                                            />
+            </StackPanel>
+        </StackPanel>
+
+    </ScrollViewer>
+</Page>
+

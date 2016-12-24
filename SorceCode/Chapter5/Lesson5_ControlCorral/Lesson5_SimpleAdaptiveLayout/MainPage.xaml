@@ -1,0 +1,32 @@
+﻿<Page x:Class="Lesson5_SimpleAdaptiveLayout.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Lesson5_SimpleAdaptiveLayout"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+<StackPanel x:Name="stack" BorderBrush="Black" BorderThickness="2"
+            Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+            Orientation="Horizontal"
+            HorizontalAlignment="Left">
+    <Button Content="Button 1"
+            Margin="5" />
+    <Button Content="Button 2"
+            Margin="5" />
+    <Button Content="Button 3"
+            Margin="5" />
+    <Button Content="Button 4" />
+    <Button Content="Button 5"
+            Margin="5" />
+    <Button Content="Button 6"
+            Margin="5" />
+    <Button Content="Button 7"
+            Margin="5" />
+    <Button Content="Button 8"
+            Margin="5" />
+    <Button Content="Button 9" />
+    <Button Content="Button 10"
+            Margin="5" />
+</StackPanel>
+</Page>

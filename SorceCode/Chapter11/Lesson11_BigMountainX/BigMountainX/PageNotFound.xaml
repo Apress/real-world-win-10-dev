@@ -1,0 +1,24 @@
+﻿<Page x:Class="BigMountainX.PageNotFound"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid>
+        <Border HorizontalAlignment="Center"
+                Width="500"
+                Padding="50"
+                Background="Gray"
+                VerticalAlignment="Center">
+
+            <TextBlock TextWrapping="Wrap"
+                       FontSize="40"
+                       Foreground="White"
+                       Height="213">
+    		<Run Text="The functionality you are requesting is not available yet. Please try again later." />
+            </TextBlock>
+        </Border>
+    </Grid>
+</Page>

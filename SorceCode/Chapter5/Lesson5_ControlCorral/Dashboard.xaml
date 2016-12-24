@@ -1,0 +1,363 @@
+﻿<Page x:Class="Lesson2_ControlCorral.Dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Lesson2_ControlCorral"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="PageNavButton"
+               TargetType="AppBarButton">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="Foreground"
+                    Value="{ThemeResource SystemControlForegroundBaseHighBrush}" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+            <Setter Property="VerticalAlignment"
+                    Value="Top" />
+            <Setter Property="FontFamily"
+                    Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontWeight"
+                    Value="Normal" />
+            <Setter Property="Width"
+                    Value="68" />
+            <Setter Property="UseSystemFocusVisuals"
+                    Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="AppBarButton">
+                        <Grid x:Name="Root"
+                              Background="{TemplateBinding Background}"
+                              MaxWidth="{TemplateBinding MaxWidth}"
+                              MinWidth="{TemplateBinding MinWidth}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="ApplicationViewStates">
+                                    <VisualState x:Name="FullSize" />
+                                    <VisualState x:Name="Compact">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility"
+                                                                           Storyboard.TargetName="TextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="Collapsed" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Overflow">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility"
+                                                                           Storyboard.TargetName="ContentRoot">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="Collapsed" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility"
+                                                                           Storyboard.TargetName="OverflowTextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="Visible" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="OverflowWithToggleButtons">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility"
+                                                                           Storyboard.TargetName="ContentRoot">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="Collapsed" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility"
+                                                                           Storyboard.TargetName="OverflowTextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="Visible" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Margin"
+                                                                           Storyboard.TargetName="OverflowTextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="38,11,0,13" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="OverflowTextLabel" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                                           Storyboard.TargetName="Root">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightListLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="Content">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="TextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="OverflowTextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="OverflowTextLabel" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                                           Storyboard.TargetName="Root">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightListMediumBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="Content">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="TextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="OverflowTextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="OverflowTextLabel" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="Content">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlDisabledBaseLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="TextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlDisabledBaseLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="OverflowTextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource SystemControlDisabledBaseLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <RelativePanel x:Name="ContentRoot"
+                                           Margin="10"
+                                           HorizontalAlignment="Stretch"
+                                           MinHeight="{ThemeResource AppBarThemeCompactHeight}">
+                                <ContentPresenter x:Name="Content"
+                                                  RelativePanel.AlignLeftWithPanel="True"
+                                                  AutomationProperties.AccessibilityView="Raw"
+                                                  Content="{TemplateBinding Icon}"
+                                                  Foreground="{TemplateBinding Foreground}"
+                                                  HorizontalAlignment="Stretch"
+                                                  Height="20"
+                                                  Margin="0,14,0,4" />
+                                <TextBlock x:Name="TextLabel"
+                                           RelativePanel.AlignVerticalCenterWithPanel="True"
+                                           RelativePanel.AlignRightWithPanel="True"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           FontSize="12"
+                                           FontFamily="{TemplateBinding FontFamily}"
+                                           Margin="0,0,0,0"
+                                           TextAlignment="Left"
+                                           TextWrapping="NoWrap"
+                                           VerticalAlignment="Center"
+                                           Text="{TemplateBinding Label}" />
+                            </RelativePanel>
+                            <TextBlock x:Name="OverflowTextLabel"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontSize="15"
+                                       FontFamily="{TemplateBinding FontFamily}"
+                                       HorizontalAlignment="Stretch"
+                                       Margin="12,11,0,13"
+                                       TextAlignment="Left"
+                                       TextWrapping="NoWrap"
+                                       Text="{TemplateBinding Label}"
+                                       TextTrimming="Clip"
+                                       Visibility="Collapsed"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+
+                <VisualState x:Name="state_320">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="split.DisplayMode"
+                                Value="Overlay" />
+                        <Setter Target="split.IsPaneOpen"
+                                Value="False" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="state_btw_320_1024">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="split.DisplayMode"
+                                Value="CompactInline" />
+                        <Setter Target="split.IsPaneOpen"
+                                Value="False" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="state_gt_1024">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="split.DisplayMode"
+                                Value="Inline" />
+                        <Setter Target="split.IsPaneOpen"
+                                Value="True" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <SplitView x:Name="split"
+                   Background="White"
+                   PaneBackground="SlateGray"
+                   DisplayMode="Overlay"
+                   IsPaneOpen="False"
+                   CompactPaneLength="48"
+                   OpenPaneLength="150">
+            <SplitView.Pane>
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Stretch">
+
+                    <AppBarButton HorizontalAlignment="Stretch"
+                                  Icon="Calendar"
+                                  Margin="0,50,0,0"
+                                  Label="New Reservation"
+                                  RequestedTheme="Dark"
+                                  Click="OnReservation"
+                                  Style="{StaticResource PageNavButton}"
+                                  Width="Auto">
+
+                    </AppBarButton>
+                    <AppBarButton Icon="List"
+                                  HorizontalAlignment="Stretch"
+                                  Label="List Reservations"
+                                  RequestedTheme="Dark"
+                                  Width="Auto"
+                                  Style="{StaticResource PageNavButton}"
+                                  Click="ListReservations" />
+                    <AppBarButton Icon="Calculator"
+                                  HorizontalAlignment="Stretch"
+                                  Label="POS"
+                                  RequestedTheme="Dark"
+                                  Width="Auto"
+                                  Style="{StaticResource PageNavButton}"
+                                  Click="OpenPOS" />
+
+                </StackPanel>
+            </SplitView.Pane>
+
+            <Grid Margin="10,10">
+
+                <Border Margin="0,53,10,0"
+                        Height="184"
+                        BorderThickness="0,2,0,1"
+                        BorderBrush="Gray"
+                        VerticalAlignment="Top">
+                    <GridView x:Name="gridview_customers"
+                              SelectionMode="Single"
+                              ItemsSource="{Binding}"
+                              IsItemClickEnabled="True"
+                              ItemClick="CustomerSelected">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border HorizontalAlignment="Left"
+                                            Height="75"
+                                            Margin="5,5,10,5"
+                                            Width="100"
+                                            BorderThickness="1"
+                                            BorderBrush="Gray"
+                                            Background="Gainsboro">
+                                        <Image Stretch="Fill"
+                                               Loaded="CustomerImageLoaded" />
+                                    </Border>
+                                    <TextBlock Text="{Binding CustomerName}"
+                                               FontSize="24"
+                                               FontWeight="ExtraLight"
+                                               VerticalAlignment="Center" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </Border>
+                <TextBlock Text="Customers"
+                           HorizontalAlignment="Right"
+                           FontSize="40"
+                           FontWeight="ExtraLight"
+                           VerticalAlignment="Top" />
+
+                <Border Margin="0,295,10,0"
+                        Height="184"
+                        BorderThickness="0,2,0,1"
+                        BorderBrush="Gray"
+                        VerticalAlignment="Top">
+                    <ListView x:Name="listview_reservations"
+                              SelectionMode="Single"
+                              ItemsSource="{Binding}"
+                              IsItemClickEnabled="True"
+                              ItemClick="ReservationSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Procedure}"
+                                               Margin="0,0,10,0" />
+                                    <TextBlock Text="{Binding AppointmentDay.Month}" />
+                                    <TextBlock Text="/" />
+                                    <TextBlock Text="{Binding AppointmentDay.Day}"
+                                               Margin="0,0,10,0" />
+                                    <TextBlock Text="{Binding AppointmentTime}"
+                                               Margin="0,0,10,0" />
+                                    <TextBlock Text="{Binding Customer.CustomerName}"
+                                               Margin="0,0,10,0" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Border>
+                <TextBlock Text="Today's Appointments"
+                           HorizontalAlignment="Right"
+                           FontSize="40"
+                           FontWeight="ExtraLight"
+                           VerticalAlignment="Top"
+                           Margin="0,242,0,0" />
+
+            </Grid>
+        </SplitView>
+        <AppBarButton HorizontalAlignment="Left"
+                      Icon="DockLeft"
+                      Width="48"
+                      RequestedTheme="Light"
+                      Click="OnPaneOpened"
+                      Style="{StaticResource PageNavButton}" />
+    </Grid>
+
+</Page>

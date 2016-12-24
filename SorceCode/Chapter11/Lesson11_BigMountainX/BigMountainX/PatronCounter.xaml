@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="BigMountainX.PatronCounter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BigMountainX"
+    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+<Page.Resources>
+    <local:BMXOccasionConverter x:Key="attendant_ext" />
+</Page.Resources>
+<Grid>
+    <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <TextBlock x:Name="txt_attendants"
+                    HorizontalAlignment="Center"
+                    Text="{Binding Converter={StaticResource attendant_ext}, 
+						ConverterParameter='number of attendants'}"
+                    FontSize="42"
+                    FontFamily="Segoe UI"
+                    FontWeight="ExtraLight" />
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Center">
+            <Button x:Name="btn_reset"
+                    Width="200"
+                    Height="100"
+                    Margin="5"
+                    Click="ResetToZero">
+                <Button.Content>
+                    <Border Padding="20"
+                            BorderThickness="0,0,0,5"
+                            BorderBrush="Red">
+                        <TextBlock Text="Reset Attendants"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center" />
+                    </Border>
+                </Button.Content>
+            </Button>
+            <Button x:Name="btn_remove"
+                    Width="200"
+                    Height="100"
+                    Margin="5"
+                    Click="RemoveAttendant">
+                <Button.Content>
+                    <Border Padding="20"
+                            BorderThickness="0,0,0,5"
+                            BorderBrush="Yellow">
+                        <TextBlock Text="Remove Attendant"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center" />
+                    </Border>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <Button x:Name="btn_add"
+                Width="410"
+                Height="100"
+                Margin="5,50,5,5">
+            <Button.Content>
+                <Border Padding="100,20,100,20"
+                        BorderThickness="0,0,0,5"
+                        BorderBrush="Green">
+                    <TextBlock Text="Add Attendant" />
+                </Border>
+            </Button.Content>
+        </Button>
+    </StackPanel>
+</Grid>
+</Page>

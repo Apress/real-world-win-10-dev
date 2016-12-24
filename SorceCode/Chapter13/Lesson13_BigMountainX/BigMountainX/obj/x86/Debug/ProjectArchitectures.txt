@@ -1,0 +1,4 @@
+C:\RealWorld\Windows10\Chapter13\Lesson13_BigMountainX\BigMountainX\Lesson13_BigMountainX.csproj;x86
+C:\RealWorld\Windows10\Chapter13\Lesson13_BigMountainX\BMX.BackgroundTasks\BMX.BackgroundTasks.csproj;neutral
+C:\RealWorld\Windows10\Chapter13\Lesson13_BigMountainX\General.UWP.Library\General.UWP.Library.csproj;neutral
+C:\RealWorld\Windows10\Chapter13\Lesson13_BigMountainX\General.UWP.Library\General.UWP.Library.csproj;neutral

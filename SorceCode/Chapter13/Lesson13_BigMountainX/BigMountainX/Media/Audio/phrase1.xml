@@ -1,0 +1,8 @@
+﻿<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-us">
+
+    The quick brown fox jumped over the
+
+
+    <prosody duration="1000ms"  contour="(0%,+20Hz) (10%,+30%) (40%,+10Hz)">Lazy</prosody> dogs.
+
+</speak>

@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="using:Lesson2_ControlCorral">
+    <local:DoubleToCurrencyConverter x:Key="double_to_currency" />
+
+    <Style TargetType="local:TemplatedReceiptLineItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TemplatedReceiptLineItem">
+                    <RelativePanel Padding="10">
+                        <TextBlock x:Name="PART_Price"
+                                   RelativePanel.AlignBottomWithPanel="True"
+                                   RelativePanel.AlignTopWithPanel="True" />
+                        <TextBlock x:Name="PART_Tax"
+                                   VerticalAlignment="Center"
+                                   RelativePanel.AlignRightWithPanel="True"
+                                   RelativePanel.AlignBottomWithPanel="True"
+                                   RelativePanel.AlignTopWithPanel="True" />
+                    </RelativePanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

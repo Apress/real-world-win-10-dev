@@ -1,0 +1,2 @@
+MainPackage=C:\RealWorld\Windows10\Chapter15\BigMountainX\BigMountainX\bin\x64\Release\BigMountainX15_1.1.5.0_x64.appx
+SymbolPackage=C:\RealWorld\Windows10\Chapter15\BigMountainX\BigMountainX\AppPackages\BigMountainX15_1.1.5.0\BigMountainX15_1.1.5.0_x64.appxsym

@@ -1,0 +1,80 @@
+<AppState xmlns="http://schemas.datacontract.org/2004/07/BigMountainX" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <Customers>
+        <BMXCustomerInfo>
+            <CustomerID>8115a32a-ae7f-4cc3-b09c-d1a6547fa1aa</CustomerID>
+            <CustomerImage i:nil="true"/>
+            <CustomerName>John Smith 0</CustomerName>
+            <DOB>2013-10-26T02:25:45.0747886-04:00</DOB>
+            <Email>test0@test.com</Email>
+        </BMXCustomerInfo>
+        <BMXCustomerInfo>
+            <CustomerID>8f404aed-9a2a-42d4-bd10-0e12f6201658</CustomerID>
+            <CustomerImage i:nil="true"/>
+            <CustomerName>John Smith 1</CustomerName>
+            <DOB>2013-10-26T02:25:45.0903631-04:00</DOB>
+            <Email>test1@test.com</Email>
+        </BMXCustomerInfo>
+    </Customers>
+    <Events>
+        <BMXEvent>
+            <Address>0 test street</Address>
+            <CreateDate>2015-10-26T02:25:45.0903631-04:00</CreateDate>
+            <Description>A night of wine and comedy-0</Description>
+            <Duration>PT0S</Duration>
+            <EventID>cb8ce546-6a29-48c3-83b9-249656123c61</EventID>
+            <EventTitle>Comedy Night at the Empire State-0</EventTitle>
+            <Feature>
+                <BIO>Emotional storytelling is how Elisheva defines her dance, a sublime communication of soul. Distinguished for her earthy expressiveness and feminine grace, Elisheva combines emotive interpretations with technical acumen. Ranging from traditional RaqsSharki to modern fusion bellydance, Elisheva treats each performance as a distinct and unique experience for her audience. Unsolicited responses to Elisheva???s dance include: ???I was mesmerized,??? ???Magical and Mysterious,??? ???Her dance is like the mother goddess personified, ???Graceful, feminine, sensual.??? Sought after bellydancer for various venues throughout New England, Elisheva is currently based out of Hartford, Connecticut. She has been performing and teaching bellydance professionally since 2010 with performances Off-Broadway, in university events, outdoor and New York City stages, arts events, music videos, restaurants, nightclubs, cultural centers, has been featured in magazines such as The Belly Dance Chronicles and the ReminderNews and organizes exciting, successful events in her local community benefiting organizations and arts.</BIO>
+                <ImageUri i:nil="true"/>
+                <Name i:nil="true"/>
+                <VideoUri i:nil="true"/>
+            </Feature>
+            <Latitude>40.7484</Latitude>
+            <Longitude>-73.9857</Longitude>
+            <Occassions i:nil="true"/>
+            <StartDateTime>2015-10-26T02:25:45.0903631-04:00</StartDateTime>
+        </BMXEvent>
+        <BMXEvent>
+            <Address>1 test street</Address>
+            <CreateDate>2015-10-26T02:25:45.0903631-04:00</CreateDate>
+            <Description>A night of wine and comedy-1</Description>
+            <Duration>PT1H</Duration>
+            <EventID>36aa0647-76ff-4449-9f8b-65a1882b30b1</EventID>
+            <EventTitle>Comedy Night at the Empire State-1</EventTitle>
+            <Feature>
+                <BIO>Emotional storytelling is how Elisheva defines her dance, a sublime communication of soul. Distinguished for her earthy expressiveness and feminine grace, Elisheva combines emotive interpretations with technical acumen. Ranging from traditional RaqsSharki to modern fusion bellydance, Elisheva treats each performance as a distinct and unique experience for her audience. Unsolicited responses to Elisheva???s dance include: ???I was mesmerized,??? ???Magical and Mysterious,??? ???Her dance is like the mother goddess personified, ???Graceful, feminine, sensual.??? Sought after bellydancer for various venues throughout New England, Elisheva is currently based out of Hartford, Connecticut. She has been performing and teaching bellydance professionally since 2010 with performances Off-Broadway, in university events, outdoor and New York City stages, arts events, music videos, restaurants, nightclubs, cultural centers, has been featured in magazines such as The Belly Dance Chronicles and the ReminderNews and organizes exciting, successful events in her local community benefiting organizations and arts.</BIO>
+                <ImageUri i:nil="true"/>
+                <Name i:nil="true"/>
+                <VideoUri i:nil="true"/>
+            </Feature>
+            <Latitude>40.7484</Latitude>
+            <Longitude>-73.9857</Longitude>
+            <Occassions i:nil="true"/>
+            <StartDateTime>2015-10-27T02:25:45.0903631-04:00</StartDateTime>
+        </BMXEvent>
+    </Events>
+    <MailingList xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>patron0@test.com</a:string>
+        <a:string>patron1@test.com</a:string>
+    </MailingList>
+    <NextEvent>
+        <Address>0 test street</Address>
+        <CreateDate>2015-10-26T02:25:45.0903631-04:00</CreateDate>
+        <Description>A night of wine and comedy-0</Description>
+        <Duration>PT0S</Duration>
+        <EventID>cb8ce546-6a29-48c3-83b9-249656123c61</EventID>
+        <EventTitle>Comedy Night at the Empire State-0</EventTitle>
+        <Feature>
+            <BIO>Emotional storytelling is how Elisheva defines her dance, a sublime communication of soul. Distinguished for her earthy expressiveness and feminine grace, Elisheva combines emotive interpretations with technical acumen. Ranging from traditional RaqsSharki to modern fusion bellydance, Elisheva treats each performance as a distinct and unique experience for her audience. Unsolicited responses to Elisheva???s dance include: ???I was mesmerized,??? ???Magical and Mysterious,??? ???Her dance is like the mother goddess personified, ???Graceful, feminine, sensual.??? Sought after bellydancer for various venues throughout New England, Elisheva is currently based out of Hartford, Connecticut. She has been performing and teaching bellydance professionally since 2010 with performances Off-Broadway, in university events, outdoor and New York City stages, arts events, music videos, restaurants, nightclubs, cultural centers, has been featured in magazines such as The Belly Dance Chronicles and the ReminderNews and organizes exciting, successful events in her local community benefiting organizations and arts.</BIO>
+            <ImageUri i:nil="true"/>
+            <Name i:nil="true"/>
+            <VideoUri i:nil="true"/>
+        </Feature>
+        <Latitude>40.7484</Latitude>
+        <Longitude>-73.9857</Longitude>
+        <Occassions i:nil="true"/>
+        <StartDateTime>2015-10-26T02:25:45.0903631-04:00</StartDateTime>
+    </NextEvent>
+    <OpenMicRequests i:nil="true"/>
+    <UserProfile i:nil="true"/>
+</AppState>

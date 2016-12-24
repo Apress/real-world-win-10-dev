@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="Lesson2_ControlCorral.RootHost"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lesson2_ControlCorral"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Border x:Name="border_titlebar"
+                Height="50" Margin="0,0,0,0"
+                VerticalAlignment="Top"
+				Visibility="Collapsed"
+                Background="Gainsboro">
+            <Grid>
+                <TextBlock Text="Control Corral" VerticalAlignment="Center"  FontFamily="segoe ui" FontWeight="ExtraLight" FontSize="30" Margin="10,0"/>
+            </Grid>
+			
+		</Border>
+        <Frame x:Name="rootframe" Margin="0,0,0,0" />
+		<Canvas x:Name="animation_root" Background="Black" Visibility="Collapsed"/>
+    </Grid>
+    
+</Page>

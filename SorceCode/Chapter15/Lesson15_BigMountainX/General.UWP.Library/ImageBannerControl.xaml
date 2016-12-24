@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="General.UWP.Library.ImageBannerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:General.UWP.Library"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+
+    <Grid>
+
+        <Path Data="M-19.1464,-17.9973 L420.5,-18.5 L420.5,248.5 L379.998,248.597 L359.834,231.537 L339.838,248.694 L-21.1464,248.503 z"
+              Margin="-19,-19,-21,0"
+              Stretch="Fill"
+              Stroke="LightGray"
+              StrokeThickness="1"
+              UseLayoutRounding="False">
+            <Path.Fill>
+                <ImageBrush x:Name="img_brush"
+                            ImageSource="media/images/club1.jpg"
+                            Stretch="UniformToFill" />
+            </Path.Fill>
+
+        </Path>
+
+    </Grid>
+</UserControl>

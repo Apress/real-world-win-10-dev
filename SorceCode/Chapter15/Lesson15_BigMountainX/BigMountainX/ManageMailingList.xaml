@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="BigMountainX.ManageMailingList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BigMountainX"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<Page.BottomAppBar>
+    <CommandBar>
+        <AppBarButton Icon="ImportAll"
+                        Label="Import All"
+                        Click="OnImportAllClicked" />
+    </CommandBar>
+</Page.BottomAppBar>
+<Grid Background="#FF6A6A6A">
+    <ListView x:Name="gridview_events"
+                SelectionMode="Single"
+                ItemsSource="{x:Bind MailingList, Mode=OneWay}"
+                >
+           
+    </ListView>
+</Grid>
+</Page>

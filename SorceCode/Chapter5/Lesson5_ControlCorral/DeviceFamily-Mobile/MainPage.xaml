@@ -1,0 +1,115 @@
+﻿<Page
+    x:Class="Lesson2_ControlCorral.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lesson2_ControlCorral"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal"
+                    IsSticky="True">
+
+            <AppBarButton Label="Reserve"
+                          Icon="Calendar">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Command="{Binding}"
+                                        CommandParameter="make a reservation"
+                                        Text="Pay Now" />
+                        <MenuFlyoutItem Text="Pay Later"
+                                        Command="{Binding}"
+                                        CommandParameter="hold my spot" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Pivot Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <PivotItem Header="Customer">
+            <StackPanel>
+                <Button Click="ReplaceImage"
+                        HorizontalAlignment="Stretch"
+                        Height="166"
+                        Margin="10,10,10,0"
+                        VerticalAlignment="Top"
+                        BorderThickness="1"
+                        BorderBrush="Gray"
+                        Background="Black">
+                    <Image x:Name="control_image"
+                           Source="/alex.jpg" />
+                </Button>
+                <AutoSuggestBox x:Name="control_name"
+                                HorizontalAlignment="Stretch"
+                                Header="What's your name?"
+                                Margin="10,10,10,0"
+                                VerticalAlignment="Top"
+                                
+                                QueryIcon="Find">
+                    <AutoSuggestBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border HorizontalAlignment="Left"
+                                        Height="75"
+                                        Margin="5,5,10,5"
+                                        Width="100"
+                                        BorderThickness="1"
+                                        BorderBrush="Gray"
+                                        Background="Gainsboro">
+                                    <Image Stretch="Fill"
+                                           Loaded="CustomerImageLoaded" />
+                                </Border>
+                                <TextBlock Text="{Binding CustomerName}"
+                                           FontSize="24"
+                                           FontWeight="ExtraLight"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </AutoSuggestBox.ItemTemplate>
+                </AutoSuggestBox>
+                <DatePicker x:Name="control_dob"
+                            Header="When were you born?"
+                            HorizontalAlignment="Stretch"
+                            Margin="10,10,10,0" 
+                            VerticalAlignment="Top" />
+                <PasswordBox x:Name="txt_passphrase"
+                             Header="Enter a passphrase"
+                             HorizontalAlignment="Stretch"
+                             Margin="10,10,10,0"
+                             PlaceholderText="keep it a secret"
+                             VerticalAlignment="Top"
+                             />
+            </StackPanel>
+		</PivotItem>
+        <PivotItem Header="Appointment">
+            <StackPanel>
+                <CalendarDatePicker x:Name="control_calendar"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="10,10,10,0"
+                                    VerticalAlignment="Top"
+                                    PlaceholderText="What day works for you?"
+                                   />
+                <TimePicker x:Name="control_time"
+                            Header="What time works for you?"
+                            Margin="10,10,10,0" HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top" />
+                <ComboBox x:Name="control_procedure"
+                          Header="Select a procedure"
+                          HorizontalAlignment="Stretch"
+                          Margin="10,10,10,0"
+                          VerticalAlignment="Top"
+                          
+                          ItemsSource="{Binding}"
+                          DisplayMemberPath="Name" />
+                <Slider x:Name="control_intensity"
+                        Header="Massage Intensity"
+                        HorizontalAlignment="Stretch"
+                        Minimum="20"
+                        Maximum="100"
+                        Margin="10,10,10,0"
+                        VerticalAlignment="Top"
+                        />
+            </StackPanel>
+		</PivotItem>
+    </Pivot>
+</Page>

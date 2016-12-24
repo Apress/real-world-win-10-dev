@@ -1,0 +1,24 @@
+﻿<Page x:Class="Lesson4_LayoutDemos.GridDemo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:Lesson4_LayoutDemos" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+            <ColumnDefinition />
+            <ColumnDefinition   />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Content="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Green" />
+        <Button Content="Right" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <VariableSizedWrapGrid Grid.Column="2" Orientation="Horizontal" MaximumRowsOrColumns="5" >
+			<Button Content="one"/>
+            <Button Content="two" />
+            <Button Content="three"   />
+            <Button Content="four" />
+        </VariableSizedWrapGrid>
+        <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="one" />
+            <Button Content="two" />
+            <Button Content="three" />
+        </StackPanel>
+	</Grid>
+</Page>

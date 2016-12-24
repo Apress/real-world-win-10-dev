@@ -1,0 +1,55 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:lib="using:General.UWP.Library"
+      x:Class="BigMountainX.UserIntroPage"
+      mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Auto">
+        <StackPanel Orientation="Vertical">
+            <lib:ImageViewerControl  HorizontalAlignment="Left"
+                                     Margin="10"
+                                     Height="200"
+                                     Width="200"
+                                     ImageSelected="OnImageSelected" />
+
+            <StackPanel Width="400"
+                        HorizontalAlignment="Left">
+                <TextBox Header="First Name"
+                         Margin="10"
+                         Text="{x:Bind Profile.FirstName, Mode=TwoWay}" />
+                <TextBox Header="Last Name"
+                         Margin="10"
+                         Text="{x:Bind Profile.LastName, Mode=TwoWay}" />
+                <TextBox Header="Email Address"
+                         Margin="10"
+                         Text="{x:Bind Profile.Email, Mode=TwoWay}" />
+                <TextBox Header="Contact Number"
+                         Margin="10"
+                         Text="{x:Bind Profile.ContactNumber, Mode=TwoWay}" />
+            </StackPanel>
+
+            <DatePicker x:Name="control_dob"
+                        Header="When were you born?"
+                        HorizontalAlignment="Left"
+                        Margin="10"
+                        DateChanged="OnDOBSelected"
+                        VerticalAlignment="Top" />
+
+            <ComboBox x:Name="control_procedure"
+                      Header="Gender"
+                      HorizontalAlignment="Left"
+                      Margin="10"
+                      SelectionChanged="OnGenderSelected"
+                      VerticalAlignment="Top"
+                      Width="296"
+                      ItemsSource="{x:Bind Genders, Mode=OneWay}" />
+            <Button Content="Continue" Margin="10"
+                    Click="OnContinue" />
+        </StackPanel>
+
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toast version="3">
+    <visual>
+        <binding template="ToastGeneric">
+            <text hint-style="body">Big Mountain X</text>
+            <text hint-wrap="true" hint-style="captionsubtle">Want a free drink?</text>
+            <text hint-wrap="true" hint-style="captionsubtle">Enter the email address of a contact to get a free drink at our next event.</text>
+            <image placement="AppLogoOverride" src="ms-appx:///assets/tile-square.png" />
+        </binding>
+    </visual>
+    <actions>
+        <input title="Enter contact email" id="txt_email" type="text" />
+        <action activationType="background" arguments="test background" content="Add Contact" />
+    </actions>
+</toast>

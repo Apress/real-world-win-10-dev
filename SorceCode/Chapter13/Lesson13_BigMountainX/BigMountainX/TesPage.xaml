@@ -1,0 +1,75 @@
+﻿<Page x:Class="BigMountainX.TestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Source="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
+               Stretch="None" />
+        <Image Source="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
+               Grid.Column="1"
+               Stretch="Uniform" />
+        <Image Source="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
+               Grid.Column="2"
+               Stretch="UniformToFill" />
+        <Image Source="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
+               Grid.Column="3"
+               Stretch="Fill" />
+        <Button Margin="10"
+                HorizontalAlignment="Center"
+                Grid.ColumnSpan="4"
+                Grid.Row="1"
+                Content="Test Image Capture"
+                Click="OnImageCaptureInvoked" />
+        <Button Margin="10"
+                HorizontalAlignment="Center"
+                Grid.ColumnSpan="4"
+                Grid.Row="1"
+                Content="Test Image Capture"
+                Click="OnDownloadInvoked" />
+
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    Grid.Column="0"
+                    Grid.Row="1">
+            <Button Margin="10"
+                    Content="Text Toast"
+                    Click="OnTextToast" />
+
+            <Button Margin="10"
+                    Content="Text / Image Toast"
+                    Click="OnTextImageToast" />
+
+            <Button Margin="10"
+                    Content="Sound Toast"
+                    Click="OnSoundToast" />
+
+            <Button Margin="10"
+                    Content="Schedule Toast"
+                    Click="OnScheduleToast" />
+
+            <Button Margin="10"
+                    Content="Text / Image Toast"
+                    Click="OnTextImageToastReact" />
+
+            <Button Margin="10"
+                    Content="Adaptive Toast"
+                    Click="OnAdaptiveToast" />
+        </StackPanel>
+
+        
+    </Grid>
+</Page>

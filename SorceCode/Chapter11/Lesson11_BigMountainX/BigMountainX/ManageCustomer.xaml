@@ -1,0 +1,77 @@
+﻿<Page x:Class="BigMountainX.ManageCustomer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+    <Grid Background="#FF6A6A6A">
+        <ScrollViewer>
+            <StackPanel Margin="20"
+                        Orientation="Vertical">
+
+                <Button Click="ReplaceImage"
+                        HorizontalAlignment="Left"
+                        Height="227"
+                        Margin="10"
+                        VerticalAlignment="Top"
+                        Width="225"
+                        BorderThickness="1"
+                        BorderBrush="Gray"
+                        Background="Gainsboro">
+                    <Image x:Name="control_image"
+                           Source="/alex.jpg" />
+                </Button>
+                <TextBox x:Name="txt_name"
+                         Header="Name"
+                         Margin="10"
+                         Width="225"
+                         HorizontalAlignment="Left" />
+                <TextBox x:Name="txt_email"
+                         Header="Email Address"
+                         Margin="10"
+                         Width="225"
+                         HorizontalAlignment="Left" />
+                <DatePicker Margin="10"
+                            x:Name="control_dob"
+                            Header="When were you born?"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top" />
+                <StackPanel Orientation="Horizontal">
+                    <Button Margin="10"
+                            Content="Save"
+                            Width="100"
+                            Click="SaveCustomer" />
+                    <Button Margin="10"
+                            Width="100"
+                            Content="Cancel"
+                            Click="CancelCustomer" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <Grid x:Name="grid_overlay"
+              Background="Gray"
+              >
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBox x:Name="txt_token"
+                         Header="Token ID"
+                         Margin="10"
+                         Width="225"
+                         HorizontalAlignment="Left" />
+                <Button Margin="10"
+                        Content="Load Customer"
+                        Width="150"
+                        Click="LoadToken" />
+                <Button Margin="10"
+                        Content="New Customer"
+                        Width="150"
+                        Click="CreateNew" />
+                <Button Margin="10"
+                        Content="Load Cached Customer"
+                        Width="150"
+                        Click="OnLoadCachedCustomer" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

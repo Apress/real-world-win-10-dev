@@ -1,0 +1,31 @@
+﻿<Page x:Class="BigMountainX.LaunchResponsePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+<Grid Background="#FF6A6A6A">
+    <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="500">
+        <Border Background="Gray">
+            <TextBlock x:ConnectionId='3' x:Name="txt_message"
+                        Height="30" />
+        </Border>
+<StackPanel Orientation="Horizontal">
+    <TextBox x:ConnectionId='1' x:Name="txt_page"
+                Width="250"
+                Margin="5" />
+    <Button x:ConnectionId='2' Content="Respond"
+            Margin="5"
+            Width="150"
+            HorizontalAlignment="Stretch"
+                                    />
+</StackPanel>
+    </StackPanel>
+</Grid>
+</Page>
+

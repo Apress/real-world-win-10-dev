@@ -1,0 +1,46 @@
+﻿<Page x:Class="BigMountainX.EmployeeSignIn"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="#FF6A6A6A">
+        <MediaElement x:Name="speech_player" />
+        <StackPanel Width="300"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <StackPanel Margin="0,0,0,5"
+                        BorderThickness="0,0,0,1"
+                        BorderBrush="Gray">
+                <PasswordBox x:Name="txt_employeecode2"
+                             PlaceholderText="Enter passcode"
+                             Header="Voice Authentication" />
+                <Button  Content="Voice Sign In"
+                         HorizontalAlignment="Right"
+                         Margin="0,5,0,10"
+                         Click="OnSayPrompt" />
+            </StackPanel>
+            <StackPanel Margin="0,0,0,5"
+                        BorderThickness="0,0,0,1"
+                        BorderBrush="Gray">
+                <TextBox x:Name="txt_passphrase"
+                         PlaceholderText="Click speak and enter the text you hear"
+                         Header="Listen Authentication" />
+                <Button Content="Listen"
+                        Margin="0,5,0,10"
+                        Click="OnPlayPassphrase" />
+            </StackPanel>
+
+            <PasswordBox x:Name="txt_employeecode"
+                         PlaceholderText="Enter passcode"
+                         Header="Just enter passcode" />
+            <Button Content="Sign In"
+                    Margin="0,10,0,0"
+                    Click="OnSignInRequested"
+                    HorizontalAlignment="Right" />
+        </StackPanel>
+    </Grid>
+</Page>

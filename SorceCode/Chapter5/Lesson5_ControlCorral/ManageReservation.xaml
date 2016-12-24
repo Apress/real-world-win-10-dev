@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="Lesson2_ControlCorral.ManageReservation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lesson2_ControlCorral"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <FlipView
+            x:Name="flipview_reservations"
+            ItemsSource="{Binding}">
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock
+                            Loaded="MassageDateLoaded"
+                            HorizontalAlignment="Left"
+                            Margin="10,10,0,0"
+                            FontSize="30"
+                            VerticalAlignment="Top" />
+                        <TextBlock
+                            HorizontalAlignment="Left"
+                            Text="{Binding Customer.CustomerName}"
+                            Margin="10,55,0,0"
+                            FontWeight="Bold"
+                            VerticalAlignment="Top"
+                            Width="242" />
+                        <DatePicker
+                            Header="DOB:"
+                            HorizontalAlignment="Left"
+                            Margin="10,80,0,0"
+                            Loaded="LoadDOB"
+                            VerticalAlignment="Top"
+                            IsEnabled="False" />
+                        <TextBlock
+                            HorizontalAlignment="Left"
+                            Margin="10,145,0,0"
+                            Text="{Binding Passphrase}"
+                            VerticalAlignment="Top"
+                            Width="296"
+                            Foreground="Red" />
+                        <TextBlock
+                            HorizontalAlignment="Left"
+                            Margin="10,237,0,0"
+                            VerticalAlignment="Top"
+                            Width="296"
+                            Text="{Binding Procedure}" />
+                        <Slider
+                            Header="Massage Intensity"
+                            HorizontalAlignment="Left"
+                            Loaded="MassageIntensityLoaded"
+                            Minimum="20"
+                            Maximum="100"
+                            Margin="10,173,0,0"
+                            VerticalAlignment="Top"
+                            IsEnabled="True"
+                            Width="296" />
+                        <Border
+                            HorizontalAlignment="Left"
+                            Height="227"
+                            Margin="353,10,0,0"
+                            VerticalAlignment="Top"
+                            Width="225"
+                            BorderThickness="1"
+                            BorderBrush="Gray"
+                            Background="Gainsboro">
+                            <Image
+                                Loaded="CustomerImageLoaded" />
+                        </Border>
+                        <Button
+                            Content="Cancel Reservation"
+							Click="CancelReservation"
+                            HorizontalAlignment="Left"
+                            Margin="353,242,0,0"
+                            VerticalAlignment="Top" />
+                    </Grid>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
+    </Grid>
+</Page>

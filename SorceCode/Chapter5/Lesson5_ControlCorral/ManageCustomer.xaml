@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="Lesson2_ControlCorral.ManageCustomer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lesson2_ControlCorral"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Margin="20"
+            Orientation="Vertical"
+            Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <TextBlock
+                HorizontalAlignment="Left"
+                Text="{Binding CustomerName}"
+                Margin="10,10,0,10"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                Width="225"
+                Height="22" />
+            <Button
+                Click="ReplaceImage"
+                HorizontalAlignment="Left"
+                Height="227"
+                Margin="10"
+                VerticalAlignment="Top"
+                Width="225"
+                BorderThickness="1"
+                BorderBrush="Gray"
+                Background="Gainsboro">
+                <Image
+                    x:Name="control_image"
+                    Source="/alex.jpg" />
+            </Button>
+            <Slider
+                x:Name="control_intensity"
+                Header="Massage Intensity"
+                HorizontalAlignment="Left"
+                Minimum="20"
+                Maximum="100"
+                Margin="10,10,0,10"
+                VerticalAlignment="Top"
+                Width="225" />
+            <DatePicker
+                x:Name="control_dob"
+                Header="When were you born?"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" />
+            <Button
+                Margin="0,05,0,0"
+                Content="Save"
+                Click="SaveCustomer" />
+        </StackPanel>
+    </ScrollViewer>
+
+</Page>

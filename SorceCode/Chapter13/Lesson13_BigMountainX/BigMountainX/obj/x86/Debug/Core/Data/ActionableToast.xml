@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toast version="3">
+    <visual>
+        <binding template="ToastGeneric">
+            <text hint-style="body">ample Samples</text>
+            <text hint-wrap="true" hint-style="captionsubtle">Actionable Toast!</text>
+            <text hint-wrap="true" hint-style="captionsubtle">This is an actionable toast</text>
+        </binding>
+    </visual>
+    <actions>
+        <input title="what do you feel about it" id="txt_one" type="text" />
+        <action activationType="protocol" arguments="http://www.google.com" content="Google" />
+        <action activationType="protocol" arguments="mailto:moemeka@live.com" content="Mail" />
+        <action arguments="hello world" content="Custom" />
+        <action activationType="background" arguments="test background" content="Custom" />
+    </actions>
+</toast>

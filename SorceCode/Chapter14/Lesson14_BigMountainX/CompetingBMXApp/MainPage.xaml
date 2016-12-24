@@ -1,0 +1,54 @@
+﻿<Page x:Class="CompetingBMXApp.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:CompetingBMXApp"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <MediaElement x:Name="speech_player" />
+        <StackPanel Width="300"
+                    VerticalAlignment="Center">
+            <Button Content="Basic text to Speech"
+                    HorizontalAlignment="Stretch"
+                    Click="OnTextToSpeech"
+                    Margin="5" />
+            <Button Content="SSML Version"
+                    HorizontalAlignment="Stretch"
+                    Click="OnSSMLSpeech"
+                    Margin="5" />
+            <StackPanel BorderBrush="Black" BorderThickness="1">
+                <TextBox x:Name="txt_dictation" Margin="5,5,5,0"/>
+                <Button Content="Recognize"
+                        HorizontalAlignment="Stretch"
+                        Click="OnRecognize"
+                        Margin="5" />
+            </StackPanel>
+            <Button Content="Recognize from list"
+                    HorizontalAlignment="Stretch"
+                    Click="OnRecognizeFromList"
+                    Margin="5" />
+            <Button Content="Recognize web"
+                    HorizontalAlignment="Stretch"
+                    Click="OnRecognizeFromWeb"
+                    Margin="5" />
+            <Button Content="Recognize no UI"
+                    HorizontalAlignment="Stretch"
+                    Click="OnRecognizeNoUI"
+                    Margin="5" />
+            <Button Content="Continuous Recognize"
+                    HorizontalAlignment="Stretch"
+                    Click="OnContinuousRecognize"
+                    Margin="5" />
+            <Button Content="On Voice Command Recognize (From Cortana)"
+                    HorizontalAlignment="Stretch"
+                    Click="OnVoiceCommand"
+                    Margin="5" />
+            <Button Content="Background Task (through Cortana)"
+                    HorizontalAlignment="Stretch"
+                    Click="OnServiceThroughCortana"
+                    Margin="5" />
+        </StackPanel>
+    </Grid>
+</Page>

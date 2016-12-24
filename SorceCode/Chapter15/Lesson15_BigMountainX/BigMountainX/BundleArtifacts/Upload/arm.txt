@@ -1,0 +1,4 @@
+MainPackage=C:\RealWorld\Windows10\Chapter15\BigMountainX\BigMountainX\bin\ARM\Release\Upload\BigMountainX15_1.1.5.0_ARM.appx
+SymbolPackage=C:\RealWorld\Windows10\Chapter15\BigMountainX\BigMountainX\AppPackages\BigMountainX15_1.1.5.0\BigMountainX15_1.1.5.0_ARM.appxsym
+ResourcePack=C:\RealWorld\Windows10\Chapter15\BigMountainX\BigMountainX\_scale-100.appx
+ResourcePack=C:\RealWorld\Windows10\Chapter15\BigMountainX\BigMountainX\_scale-125.appx

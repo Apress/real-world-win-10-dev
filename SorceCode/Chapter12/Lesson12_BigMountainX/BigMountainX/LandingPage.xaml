@@ -1,0 +1,226 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:lib="using:General.UWP.Library"
+      xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+      x:Class="BigMountainX.LandingPage"
+      mc:Ignorable="d">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="state_320">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="rpanel_right.(RelativePanel.Below)"
+                                Value="rpanel_left" />
+                        <Setter Target="rpanel_right.(RelativePanel.AlignTopWithPanel)"
+                                Value="False" />
+                        <Setter Target="rpanel_right.(RelativePanel.AlignLeftWithPanel)"
+                                Value="True" />
+                        <Setter Target="rpanel_left.( RelativePanel.AlignBottomWithPanel)"
+                                Value="False" />
+                        <Setter Target="rpanel_left.(RelativePanel.AlignRightWithPanel)"
+                                Value="True" />
+                        <Setter Target="rpanel_left.( RelativePanel.AlignLeftWithPanel)"
+                                Value="True" />
+                        <Setter Target="rpanel_left.HorizontalAlignment"
+                                Value="Stretch" />
+                        <Setter Target="rpanel_left.Width"
+                                Value="Auto" />
+                        <Setter Target="rpanel_left.Height"
+                                Value="600" />
+                        <Setter Target="rpanel_left.(RelativePanel.AlignRightWithPanel)"
+                                Value="True" />
+
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="state_gt_1024">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="rpanel_right.(RelativePanel.RightOf)"
+                                Value="rpanel_left" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ScrollViewer VerticalScrollMode="Auto"
+                      VerticalScrollBarVisibility="Auto">
+
+            <Grid Height="Auto">
+                <Grid Background="#FF6A6A6A">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*" />
+                        <RowDefinition Height="60*" />
+                    </Grid.RowDefinitions>
+
+                    <RelativePanel x:Name="rpanel_root"
+                                   Grid.Row="1"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch">
+                        <RelativePanel x:Name="rpanel_left"
+                                       Margin="0,-38,0,0"
+                                       Width="500"
+                                       RelativePanel.AlignTopWithPanel="True"
+                                       RelativePanel.AlignBottomWithPanel="True"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Stretch"
+                                       Background="#FF444141">
+
+                            <!--<Maps:MapControl x:Name="map"
+                                             Height="300"
+                                             Margin="0" Visibility="Collapsed"
+                                             RelativePanel.AlignLeftWithPanel="True"
+                                             RelativePanel.AlignRightWithPanel="True"
+                                             ZoomInteractionMode="GestureAndControl"
+                                             PanInteractionMode="Auto"
+                                             TiltInteractionMode="GestureAndControl"
+                                             MapServiceToken="xVw4m3LWqMqNhkkV6iTs~8xCzHMDnuTdugl7qS-7lQA~AgsDbT7TRxvrwzPA2TyPwbZnYKpauH3Ke4kgOl2W5M4VOsIPXIF4Ir6ofAGjrNye" />-->
+                            <Button Content="More ..."
+                                    Width="200"
+                                    Background="Gray"
+                                    
+                                    RelativePanel.AlignRightWithPanel="True"
+                                    Margin="5">
+                                <Button.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem Click="OnShowStreetView"
+                                                        Text="Show Streetview" />
+                                        <MenuFlyoutItem Click="OnClickNextEvent"
+                                                        Text="Open in Maps" />
+                                        <MenuFlyoutItem Click="OnDirectionsClicked"
+                                                        Text="Directions" />
+
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                            </Button>
+
+                            <TextBlock x:Name="txt_location"
+                                       Margin="5"
+                                       Text="retrieving location..."
+                                       RelativePanel.AlignBottomWithPanel="True" />
+                            <TextBlock Text="{x:Bind Mode=OneWay, Path=NextEventAttendanceCount}"
+                                       Margin="5"
+                                       HorizontalAlignment="Right"
+                                       RelativePanel.AlignRightWithPanel="True"
+                                       RelativePanel.AlignBottomWithPanel="True"
+                                       RelativePanel.RightOf="txt_location" />
+
+                        </RelativePanel>
+                        <Grid  x:Name="rpanel_right"
+                               RelativePanel.AlignRightWithPanel="True"
+                               RelativePanel.RightOf="rpanel_left"
+                               RelativePanel.AlignTopWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True">
+                            <Border Margin="10,10,30,0"
+                                    BorderThickness="0,0,0,1"
+                                    BorderBrush="LightGray"
+                                    Padding="0,0,0,25"
+                                    MaxHeight="400"
+                                    VerticalAlignment="Top">
+                                <Grid>
+                                    <StackPanel Margin="0,250,0,0"
+                                                VerticalAlignment="Top"
+                                                HorizontalAlignment="Left"
+                                                Orientation="Horizontal"
+                                                Height="50">
+
+                                        <ToggleButton Content="Audio Message"
+                                                      Background="Gray"
+                                                      Click="ToggleRecord"
+                                                      Margin="0,2.5,2.5,2.5" />
+                                        <Button Content="Video Message"
+                                                Background="Gray"
+                                                Click="ToggleRecordVideo"
+                                                Margin="2.5">
+                                            <FlyoutBase.AttachedFlyout>
+                                                <Flyout x:Name="flyout_videomessage"
+                                                        Placement="Top">
+                                                    <Grid Width="300"
+                                                          Height="200"
+                                                          Background="Gray">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="80*" />
+                                                            <RowDefinition Height="20*" />
+                                                        </Grid.RowDefinitions>
+
+                                                        <CaptureElement x:Name="capture_element"
+                                                                        Margin="2.5"
+                                                                        HorizontalAlignment="Stretch" />
+                                                        <Button x:Name="stop_recording"
+                                                                Height="50"
+                                                                Content="Stop Recording"
+                                                                Margin="2.5"
+                                                                HorizontalAlignment="Stretch"
+                                                                Grid.Row="1"
+                                                                Click="OnStopVideoCapture" />
+                                                        <MediaElement x:Name="media_message"
+                                                                      Grid.Row="0"
+                                                                      Grid.RowSpan="2"
+                                                                      Width="300"
+                                                                      AutoPlay="False"
+                                                                      Height="200"
+                                                                      Visibility="Visible"
+                                                                      MediaOpened="OnVideoMessageRecordingReady"
+                                                                      MediaEnded="OnVideoMessagePlaybackCompleted" />
+                                                    </Grid>
+                                                </Flyout>
+                                            </FlyoutBase.AttachedFlyout>
+                                        </Button>
+                                    </StackPanel>
+                                    <Border BorderThickness="1"
+                                            Background="Black"
+                                            Width="400"
+                                            BorderBrush="LightGray"
+                                            Height="250"
+                                            VerticalAlignment="Top"
+                                            HorizontalAlignment="Left">
+                                        <MediaElement x:Name="media"
+                                                      AudioCategory="BackgroundCapableMedia"
+                                                      Visibility="Visible"
+                                                      Stretch="Fill"
+                                                      AutoPlay="True"
+                                                      AreTransportControlsEnabled="True"
+                                                      Source="media/video/black.mp4" />
+
+                                    </Border>
+                                    <ScrollViewer Margin="405,0,0,0"
+                                                  VerticalScrollBarVisibility="Auto"
+                                                  VerticalScrollMode="Auto">
+                                        <TextBlock FontFamily="verdana"
+                                                   FontSize="12"
+                                                   FontWeight="ExtraLight"
+                                                   Text="{x:Bind Feature.BIO, Mode=OneWay}"
+                                                   TextWrapping="Wrap" />
+                                    </ScrollViewer>
+
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </RelativePanel>
+
+                    <lib:ImageBannerControl x:Name="img_banner"
+                                            Grid.Row="0" />
+
+                </Grid>
+
+                <lib:ImageViewerControl  HorizontalAlignment="Left"
+                                         VerticalAlignment="Top"
+                                         Margin="10"
+                                         Height="100"
+                                         Width="100"
+                                         Loaded="OnImageViewerLoaded"
+                                         ImageSelected="OnImageSelected" />
+            </Grid>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>

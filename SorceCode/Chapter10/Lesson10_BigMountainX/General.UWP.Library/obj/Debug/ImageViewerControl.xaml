@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="General.UWP.Library.ImageViewerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:General.UWP.Library"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+
+<Grid x:ConnectionId='1' Background="Gray"
+        BorderBrush="Black"
+        BorderThickness="1"
+                                              >
+    <Grid >
+        <CaptureElement x:ConnectionId='6' x:Name="capture_element" />
+        <Button x:ConnectionId='7' HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="10"
+				Background="Gray"
+                Content="Take Picture"
+                                                  />
+    </Grid>
+
+    <Image x:ConnectionId='2' x:Name="img_control"
+            Stretch="Uniform"
+                                       
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+        <FlyoutBase.AttachedFlyout>
+            <MenuFlyout Placement="Bottom">
+                <MenuFlyoutItem x:ConnectionId='4' Text="Browse ..."
+                                                           />
+                <MenuFlyoutItem x:ConnectionId='5' Text="Take Picture"
+                                                           />
+            </MenuFlyout>
+        </FlyoutBase.AttachedFlyout>
+    </Image>
+
+    <SymbolIcon x:ConnectionId='3' x:Name="symbol_camera"
+                Symbol="Camera"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+</Grid>
+</UserControl>
+

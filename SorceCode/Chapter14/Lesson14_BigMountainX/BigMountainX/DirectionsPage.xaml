@@ -1,0 +1,35 @@
+﻿<Page x:Class="BigMountainX.DirectionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:BigMountainX"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      VerticalScrollMode="Auto">
+            <StackPanel>
+                <Maps:MapControl x:Name="map"
+                                 Height="400"
+                                 Margin="0"
+                                 ZoomLevel="10"
+                                 HorizontalAlignment="Stretch"
+                                 ZoomInteractionMode="GestureOnly"
+                                 PanInteractionMode="Auto"
+                                 TiltInteractionMode="GestureOnly"
+                                 MapServiceToken="xVw4m3LWqMqNhkkV6iTs~8xCzHMDnuTdugl7qS-7lQA~AgsDbT7TRxvrwzPA2TyPwbZnYKpauH3Ke4kgOl2W5M4VOsIPXIF4Ir6ofAGjrNye" />
+                <StackPanel x:Name="spanel_directions"
+                            Orientation="Vertical"
+                            Margin="10,50,10,50">
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+        <ProgressRing x:Name="progress"
+                      IsActive="True"
+                      Width="100"
+                      Height="100" />
+    </Grid>
+</Page>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+    <CommandSet xml:lang="en-us" Name="en-us-CommandSet">
+        <CommandPrefix>Big Mountain, </CommandPrefix>
+        <Example> Show me what's hapenning </Example>
+        <Command Name="show-events-today">
+            <Example>show me upcomming shows in New York</Example>
+            <ListenFor>show me upcomming shows in {location}</ListenFor>
+            <Feedback>Finding shows in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="show-events-tomorrow">
+            <Example>show me upcomming shows in New York</Example>
+            <ListenFor>show me upcomming shows in {location}</ListenFor>
+            <Feedback>Finding shows in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="show-events-thisweek">
+            <Example>show me upcomming shows in New York</Example>
+            <ListenFor>show me upcomming shows in {location}</ListenFor>
+            <Feedback>Finding shows in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="show-events-thisweekend">
+            <Example>show me upcomming shows in New York</Example>
+            <ListenFor>show me upcomming shows in {location}</ListenFor>
+            <Feedback>Finding shows in {location}</Feedback>
+            <Navigate/>
+        </Command>
+        <Command Name="buy-tickets">
+            <Example>Get me tickets to the next comedy shows in Miami</Example>
+            <ListenFor>Get me tickets to the next {event_type} in {location}</ListenFor>
+            <Feedback>Getting tickets to {event_type} in {location}</Feedback>
+            <Navigate/>
+        </Command>
+
+        <Command Name="do-something-generic">
+            <Example>do some wierd generic thing</Example>
+            <ListenFor>do [my]</ListenFor>
+            <Feedback>okay</Feedback>
+            <Navigate/>
+        </Command>
+        <PhraseList Label="location">
+            <Item>Miami</Item>
+            <Item>Boston</Item>
+            <Item>New York</Item>
+            <Item>Chicago</Item>
+        </PhraseList>
+        <PhraseList Label="event_type">
+            <Item>Comedy Show</Item>
+            <Item>Party</Item>
+            <Item>Performance</Item>
+            <Item>Open Mic</Item>
+        </PhraseList>
+    </CommandSet>
+</VoiceCommands>
